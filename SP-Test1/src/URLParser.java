@@ -6,31 +6,31 @@ public class URLParser {
     }
 
     // Formatez un URL ca fiind "www.google.com/tip/titlu/marime";
-    public Content getContentFromURL() {
+    public PlayableMedia getContentFromURL() {
         String[] splitURL = URL.split("/");
-        Content content = null;
+        PlayableMedia playableMedia = null;
 
         try {
             switch (splitURL[1]) {
                 case "video" ->
                         {
                             System.out.println("Descarc video");
-                            content = new Video(splitURL[2], Integer.parseInt(splitURL[3]));
+                            playableMedia = new Video(splitURL[2], Integer.parseInt(splitURL[3]));
                         }
                 case "melody" ->
                         {
                             System.out.println("Descarc melodie");
-                            content = new Melody(splitURL[2], Integer.parseInt(splitURL[3]));
+                            playableMedia = new Melody(splitURL[2], Integer.parseInt(splitURL[3]));
                         }
                 case "GIF" ->
                         {
                             System.out.println("Descarc GIF");
-                            content = new GIF(splitURL[2], Integer.parseInt(splitURL[3]));
+                            playableMedia = new GIF(splitURL[2], Integer.parseInt(splitURL[3]));
                         }
             }
         }
         catch (UnsupportedOperationException e) { e.printStackTrace(); }
 
-        return content;
+        return playableMedia;
     }
 }

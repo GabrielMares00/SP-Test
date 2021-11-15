@@ -3,7 +3,7 @@ public class Main {
         MediaPlayer mediaPlayer = new MediaPlayer("Sputofy");
 
         Playlist playlist1 = new Playlist("Muzica d-aia blana");
-        Video video1 = new Video("Tarzan", 1024);
+        VideoProxy video1 = new VideoProxy("www.google.com/video/tarzan/1024");
         Video video2 = new Video("Visiting zoo", 768);
         playlist1.addDirectlyByContent(video1);
         playlist1.addDirectlyByContent(video2);
